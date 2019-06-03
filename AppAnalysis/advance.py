@@ -10,3 +10,6 @@ def drop_nan(data):
     del_rows=data[data.isnull().T.any()].index.tolist()
     for i in del_rows:
         data.drop(labels=i, axis=0, index=None, columns=None, inplace=True)
+
+def drop_any():
+    pass
