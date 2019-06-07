@@ -32,12 +32,12 @@ def readfFile(filename):
 
 def allAdvance(data):
     try:
-        data = advance.drop_nan(data)
-        data = advance.drop_duplicat_row(data)
+        advance.drop_nan(data)
+        advance.drop_duplicat_row(data)
     except:
         for i in range(len(data)):
-            data[i] = advance.drop_nan(data[i])
-            data[i] = advance.drop_duplicat_row(data[i])
+            advance.drop_nan(data[i])
+            advance.drop_duplicat_row(data[i])
     return data
 
 
