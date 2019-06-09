@@ -17,3 +17,9 @@ def drop_col(data_all,del_col):#参数（数据集，需要删除的列名列表
     for columns in del_col:
         data_all.drop(labels=columns, axis=1, index=None, columns=None, inplace=True)
 
+#删除空值
+def drop_nan_get(data):
+    del_rows=data[data.isnull().T.any()].index.tolist()
+    for i in del_rows:
+        data.drop(labels=i)
+    return data
