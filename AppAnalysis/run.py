@@ -3,7 +3,6 @@ import time
 import pandas as pd
 import advance
 
-
 # inputfile = open('./data/app_events.csv', 'rb')   #可打开含有中文的地址
 # data = pd.read_csv(inputfile, encoding='gbk' ,iterator=True)
 
@@ -71,7 +70,7 @@ if __name__ == '__main__':
     events_device = events_device[events_device.device_id.isin(device_id)]
     events_device = events_device.dropna()
     events_device = events_device['event_id']
-    # events_device.to_csv('events_device.csv')
+    events_device.to_csv('events_device.csv')
     events_device_list = events_device.tolist()
     # print(events_device_list)
 
@@ -124,7 +123,7 @@ if __name__ == '__main__':
         event_id_app_id_dict = {'event_id': "app_id"}
         for i,group in app_events[j]:
             event_id_app_id_dict[str(i)] = list(group)
-        new_app_events = pd.DataFrame(event_id_app_id_dict)
+        new_app_events = pd.DataFrame.from_dict(event_id_app_id_dict, orient='index')
         new_app_events.to_csv('new_app_events'+str(j+1)+'.csv')
         event_id_app_id_dict.clear()
             # print(app_id_list.append(list(group)))

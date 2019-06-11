@@ -54,12 +54,14 @@ if __name__ == '__main__':
 
     p1 = plt.figure(figsize=(8,8))
     p1_1 = p1.add_subplot(2, 1, 1)     #创建第一幅子图
-    plt.bar(data1_x,data1)
+    color = 'red', 'orange', 'yellow', 'green', 'blue', 'gray', 'goldenrod', 'pink', 'brown', 'purple'
+
+    plt.bar(data1_x,data1,color=color)
     plt.ylabel('使用数量')
     plt.title('最受欢迎的十大手机品牌')
     p2_2 = p1.add_subplot(2, 1, 2)     #创建第二幅子图
     plt.title('最受欢迎的十大手机型号')
-    plt.bar(data2_x, data2)
+    plt.bar(data2_x, data2,color=color)
     plt.xticks(rotation=45)
     plt.ylabel('使用数量')
     plt.show()
