@@ -17,11 +17,11 @@ import run
 def float_col(r):
     return int(time.mktime(r.timetuple())/1000)
 
-
+# 使用处理好的数据进行构建模型，并用模型来预测test集
 if __name__ == '__main__':
     time_start = time.time()
     train_test1 = run.readfFile('train_test1_rewr.csv')
-
+    train_test1 = train_test1.ix[0:int(len(train_test1)/10)]
     test1_data = train_test1[['device_id','event_id','timestamp','longitude','latitude','brand_model_label_code']]
 
     test1_data['timestamp'] = pd.to_datetime(test1_data['timestamp'])

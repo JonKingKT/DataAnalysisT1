@@ -45,11 +45,12 @@ if __name__ == '__main__':
     # 数据地址
     # app_events = readfFile('./data/app_events.csv')
     # app_labels = readfFile('./data/app_labels.csv')
-    events = readfFile('./data/events.csv')
-    gender_age_test = readfFile('./data/gender_age_test.csv')
-    # gender_age_train = readfFile('./data/gender_age_train.csv')
+    # events = readfFile('./data/events.csv')
+    # gender_age_test = readfFile('./data/gender_age_test.csv')
+    gender_age_train = readfFile('./data/gender_age_train.csv')
     # label_categories = readfFile('./data/label_categories.csv')
     # phone_brand_device_model = readfFile('./data/phone_brand_device_model.csv')
+
 
 
 
